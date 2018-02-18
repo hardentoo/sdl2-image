@@ -3,13 +3,13 @@ language: haskell
 sudo: required
 
 env:
-  - GHCVER=8.0.2 CABALVER=1.24 HAPPYVER=1.19.5 LD_LIBRARY_PATH=/usr/local/lib
+  - GHCVER=8.0.2 CABALVER=1.24 HAPPYVER=1.19.5 LD_LIBRARY_PATH=/usr/local/lib PKG_CONFIG_PATH=/usr/local/lib/pkgconfig 
 
 before_install:
   - cd ..
 
   # Install SDL.
-  - wget -q http://www.libsdl.org/release/SDL2-2.0.3.tar.gz
+  - wget -q http://www.libsdl.org/release/SDL2-2.0.7.tar.gz
   - tar xf SDL2-*.tar.gz
   - cd SDL2-* && ./configure && make && sudo make install && cd ..
 
